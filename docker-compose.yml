@@ -1,0 +1,24 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    ports: ["11434:11434"]
+    volumes: ["ollama:/root/.ollama"]
+
+  # one-shot job that pulls the model into the ollama volume
+  ollama-pull:
+    image: ollama/ollama:latest
+    depends_on: [ollama]
+    environment: [OLLAMA_HOST=ollama:11434]
+    entrypoint: ["ollama", "pull", "llama3.2"]
+
+  triage-agent:
+    build: .
+    ports: ["8080:8080"]
+    environment:
+      TRIAGE_LLM: auto
+      OLLAMA_BASE_URL: http://ollama:11434
+      OLLAMA_MODEL: llama3.2
+    depends_on: [ollama]
+
+volumes:
+  ollama: {}

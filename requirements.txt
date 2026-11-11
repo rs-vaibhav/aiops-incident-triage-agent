@@ -1,0 +1,7 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+httpx>=0.27            # FastAPI TestClient
+pytest>=8.0
+# LLM + vector store (optional - the agent falls back to offline mode without them)
+langchain-ollama>=0.2
+chromadb>=0.5

@@ -1,0 +1,44 @@
+{
+  "version": "4",
+  "groupKey": "{}:{alertname=~\".*\"}",
+  "status": "firing",
+  "receiver": "triage-agent",
+  "commonLabels": {"env": "prod", "cluster": "aks-prod-centralindia"},
+  "alerts": [
+    {
+      "status": "firing",
+      "labels": {"alertname": "DBConnectionPoolExhausted", "service": "postgres", "instance": "pg-flex-prod-01", "severity": "critical"},
+      "annotations": {"summary": "Active connections at 98% of max_connections", "description": "postgres has 196/200 active connections for 5m"},
+      "startsAt": "2026-10-12T10:00:30.123456789Z",
+      "fingerprint": "a1"
+    },
+    {
+      "status": "firing",
+      "labels": {"alertname": "HighLatency", "service": "payments-api", "pod": "payments-api-7d9f6c-x2k4l", "severity": "warning"},
+      "annotations": {"summary": "p95 latency 2.4s (SLO 300ms)", "description": "payments-api p95 above SLO for 10m"},
+      "startsAt": "2026-10-12T10:02:00Z",
+      "fingerprint": "a2"
+    },
+    {
+      "status": "firing",
+      "labels": {"alertname": "HighErrorRate", "service": "checkout-api", "pod": "checkout-api-5c8b-qq7wz", "severity": "critical"},
+      "annotations": {"summary": "5xx ratio 12%", "description": "checkout-api returning 5xx for 12% of requests"},
+      "startsAt": "2026-10-12T10:03:10Z",
+      "fingerprint": "a3"
+    },
+    {
+      "status": "firing",
+      "labels": {"alertname": "DiskSpaceLow", "service": "logging-node", "instance": "aks-nodepool1-31415-vmss000002", "severity": "warning"},
+      "annotations": {"summary": "Root filesystem 91% used", "description": "/ on node has 9% free space"},
+      "startsAt": "2026-10-12T10:20:00Z",
+      "fingerprint": "a4"
+    },
+    {
+      "status": "resolved",
+      "labels": {"alertname": "HighCPUUsage", "service": "reporting-batch", "severity": "warning"},
+      "annotations": {"summary": "CPU 95%"},
+      "startsAt": "2026-10-12T09:10:00Z",
+      "fingerprint": "a5"
+    }
+  ]
+}

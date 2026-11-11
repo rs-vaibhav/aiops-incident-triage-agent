@@ -1,0 +1,14 @@
+[
+  {"id": "E01", "alerts": [{"alertname": "DBConnectionPoolExhausted", "service": "postgres", "severity": "critical", "summary": "196/200 connections"}, {"alertname": "HighErrorRate", "service": "payments-api", "severity": "critical", "summary": "5xx 9%"}], "expected_severity": "P1", "expected_runbook": "db-connection-pool"},
+  {"id": "E02", "alerts": [{"alertname": "PodCrashLooping", "service": "orders-api", "severity": "warning", "summary": "restarted 6 times in 10m"}], "expected_severity": "P3", "expected_runbook": "pod-crashloop"},
+  {"id": "E03", "alerts": [{"alertname": "ContainerOOMKilled", "service": "reporting-batch", "severity": "warning", "summary": "container exceeded memory limit"}], "expected_severity": "P3", "expected_runbook": "pod-crashloop"},
+  {"id": "E04", "alerts": [{"alertname": "DiskSpaceLow", "service": "logging-node", "severity": "warning", "summary": "/ 91% used"}], "expected_severity": "P4", "expected_runbook": "disk-space"},
+  {"id": "E05", "alerts": [{"alertname": "HighLatency", "service": "checkout-api", "severity": "warning", "summary": "p95 1.8s"}], "expected_severity": "P3", "expected_runbook": "high-latency"},
+  {"id": "E06", "alerts": [{"alertname": "ServiceDown", "service": "auth-service", "severity": "critical", "summary": "no ready endpoints"}], "expected_severity": "P1", "expected_runbook": "high-error-rate"},
+  {"id": "E07", "alerts": [{"alertname": "TLSCertificateExpiry", "service": "auth-service", "severity": "warning", "summary": "certificate expires in 5 days"}], "expected_severity": "P3", "expected_runbook": "tls-cert-expiry"},
+  {"id": "E08", "alerts": [{"alertname": "HighCPUUsage", "service": "reporting-batch", "severity": "warning", "summary": "CPU 95% for 15m"}], "expected_severity": "P4", "expected_runbook": "high-cpu-memory"},
+  {"id": "E09", "alerts": [{"alertname": "HighErrorRate", "service": "orders-api", "severity": "critical", "summary": "5xx 15% after deploy v2.3.1"}], "expected_severity": "P2", "expected_runbook": "high-error-rate"},
+  {"id": "E10", "alerts": [{"alertname": "UpstreamTimeout", "service": "checkout-api", "severity": "warning", "summary": "payments call deadline exceeded"}, {"alertname": "HighLatency", "service": "checkout-api", "severity": "warning", "summary": "p99 4s"}], "expected_severity": "P3", "expected_runbook": "high-latency"},
+  {"id": "E11", "alerts": [{"alertname": "HighMemoryUsage", "service": "search-api", "severity": "info", "summary": "working set 88% of limit"}], "expected_severity": "P4", "expected_runbook": "high-cpu-memory"},
+  {"id": "E12", "alerts": [{"alertname": "SLOErrorBudgetBurn", "service": "payments-api", "severity": "critical", "summary": "fast burn 14.4x over 1h"}], "expected_severity": "P1", "expected_runbook": "high-error-rate"}
+]

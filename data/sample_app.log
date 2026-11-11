@@ -1,0 +1,7 @@
+2026-10-12T10:00:12Z INFO payments-api pod=payments-api-7d9f6c-x2k4l "processed payment id=8812 in 120ms"
+2026-10-12T10:00:41Z ERROR payments-api pod=payments-api-7d9f6c-x2k4l "connection pool exhausted (max=20, waiting=57)"
+2026-10-12T10:00:43Z ERROR payments-api pod=payments-api-7d9f6c-x2k4l "connection pool exhausted (max=20, waiting=61)"
+2026-10-12T10:01:05Z WARN checkout-api pod=checkout-api-5c8b-qq7wz "call to payments-api timed out after 2000ms"
+2026-10-12T10:31:44Z CRITICAL orders-api pod=orders-api-66f-8hbbz "OOMKilled: container exceeded memory limit 512Mi"
+2026-10-12T10:31:59Z ERROR orders-api pod=orders-api-66f-8hbbz "Back-off restarting failed container"
+2026-10-12T11:15:02Z ERROR auth-service pod=auth-service-9a-1cc2 "x509: certificate has expired or is not yet valid"
